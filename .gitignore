@@ -1,0 +1,28 @@
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# SQLite Database (generated locally at runtime)
+*.db
+*.sqlite3
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Environments & IDEs
+.env
+.vscode/
+.idea/
+
+# Operating System files
+.DS_Store
+Thumbs.db
