@@ -142,7 +142,17 @@ This project was built with a modular, 3-tier architecture allowing for equal di
 - Configured database connection pooling and script execution with `PRAGMA foreign_keys = ON` (`database/connection.py`).
 - Implemented core business rules in `services/`:
   - Ensuring only `AVAILABLE` assets can be assigned.
-  - Automating status transitions during asset returns.
-  - Enforcing the strict 4-stage service ticket lifecycle (`OPEN` ➔ `IN_PROGRESS` ➔ `RESOLVED` ➔ `CLOSED`).
 - Handled atomic database transactions with rollback on integrity failures.
+
+---
+
+## 👥 Contributors & Core Developers
+
+| Developer | Role | GitHub Profile |
+| :--- | :--- | :--- |
+| **Hansika Sayyad** | Backend & REST API Engineer | [@HansikaSayyad](https://github.com/HansikaSayyad) |
+| **Madhavi Nimmala** | Frontend & UI/UX Engineer | [@Madhavi-Nimmala](https://github.com/Madhavi-Nimmala) |
+| **Jhansi Naga Pavan Kalyan** | Database & Business Logic Engineer | [@Jhansi-Naga-Pavan-Kalyan](https://github.com/Jhansi-Naga-Pavan-Kalyan) |
+| **Hari Hara Naidu** | Project Lead & System Setup | [@harihara9999](https://github.com/harihara9999) |
+
 
