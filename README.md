@@ -110,3 +110,39 @@ python -m streamlit run frontend/app.py
 | | `PUT` | `/tickets/{id}/assign-technician` | Assign technician (transitions to `IN_PROGRESS`) |
 | | `PUT` | `/tickets/{id}/resolve` | Record diagnosis and resolve ticket |
 | | `PUT` | `/tickets/{id}/status` | Update ticket status (`OPEN` ➔ `IN_PROGRESS` ➔ `RESOLVED` ➔ `CLOSED`) |
+
+---
+
+## 👥 Team Work Breakdown (Equal Contribution ~33.3% Each)
+
+This project was built with a modular, 3-tier architecture allowing for equal distribution of responsibilities across three core engineering disciplines:
+
+| Developer Role | Focus Area | Core Modules & Files | Contribution |
+| :--- | :--- | :--- | :--- |
+| **Developer 1: Backend & API Engineer** | REST API Architecture, Routing, Schema Validation | `main.py`, `routers/*.py`, `models/*.py` | **~33.3%** |
+| **Developer 2: Frontend & UI/UX Engineer** | Web Dashboard, Component State, Client Communication | `frontend/app.py`, `frontend/api_client.py` | **~33.3%** |
+| **Developer 3: Database & Business Logic Engineer** | Relational Schemas, ACID Transactions, Service Workflows | `schema.sql`, `database/*.py`, `services/*.py` | **~33.3%** |
+
+### Detailed Responsibilities:
+
+#### 1. Developer 1 — Backend & REST API Engineer
+- Designed the OpenAPI/Swagger REST specifications using **FastAPI**.
+- Implemented payload data validation and type checking with **Pydantic** models (`models/`).
+- Developed modular API routing for Employees, Assets, Assignments, and Service Tickets (`routers/`).
+- Standardized HTTP status codes (`200 OK`, `201 Created`, `404 Not Found`, `409 Conflict`) and error handling across endpoints.
+
+#### 2. Developer 2 — Frontend & UI/UX Engineer
+- Designed the interactive operations dashboard using **Streamlit** with a custom navy/slate theme.
+- Developed client-side API communication layer (`frontend/api_client.py`) with error trapping and request timeouts.
+- Built live KPI metric cards, status summaries, searchable directories, and interactive CRUD tabs.
+- Created the interactive 4-step Service Ticket visualizer and state progress tracker.
+
+#### 3. Developer 3 — Database & Business Logic Engineer
+- Architected the relational SQLite schema (`schema.sql`) enforcing foreign keys, check constraints, and unique indexes.
+- Configured database connection pooling and script execution with `PRAGMA foreign_keys = ON` (`database/connection.py`).
+- Implemented core business rules in `services/`:
+  - Ensuring only `AVAILABLE` assets can be assigned.
+  - Automating status transitions during asset returns.
+  - Enforcing the strict 4-stage service ticket lifecycle (`OPEN` ➔ `IN_PROGRESS` ➔ `RESOLVED` ➔ `CLOSED`).
+- Handled atomic database transactions with rollback on integrity failures.
+
